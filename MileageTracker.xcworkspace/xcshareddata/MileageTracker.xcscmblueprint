@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D4F9A4699F14B7BDD68CEEE1A4F2B15B44261837",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D4F9A4699F14B7BDD68CEEE1A4F2B15B44261837" : 9223372036854775807,
+    "508BD2E450D4134EC966FB52EDAC02F35C2763D5" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EC95AF5A-1568-4D9D-AD0B-F37AFF6956E8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D4F9A4699F14B7BDD68CEEE1A4F2B15B44261837" : "milagetracker\/",
+    "508BD2E450D4134EC966FB52EDAC02F35C2763D5" : "whatsinit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MileageTracker",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MileageTracker.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/alexandru1208\/whatsinit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "508BD2E450D4134EC966FB52EDAC02F35C2763D5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ab4systems\/milagetracker.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D4F9A4699F14B7BDD68CEEE1A4F2B15B44261837"
+    }
+  ]
+}

@@ -7,14 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E76A304804B587F287DDA709 /* Pods_MileageTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AC58BC23DC2F03BD12774C /* Pods_MileageTracker.framework */; };
+		FA0E026B1E978D4100526012 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E026A1E978D4000526012 /* Beacon.swift */; };
+		FA0E026D1E97D35A00526012 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E026C1E97D35A00526012 /* CalendarViewController.swift */; };
+		FA0E026F1E97E57400526012 /* CustomIconColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E026E1E97E57400526012 /* CustomIconColorButton.swift */; };
+		FA0E02731E9BD79000526012 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E02721E9BD79000526012 /* ProfileViewController.swift */; };
+		FA190A7E1EA7683B009B32A8 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA190A7D1EA7683B009B32A8 /* TripTableViewCell.swift */; };
+		FA5CBB121E92948F00A952B8 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CBB111E92948F00A952B8 /* FormViewController.swift */; };
+		FA5CBB141E9385F400A952B8 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CBB131E9385F300A952B8 /* RoundImageView.swift */; };
+		FA5CBB161E93921F00A952B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CBB151E93921F00A952B8 /* Extensions.swift */; };
+		FA5CBB181E93935300A952B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CBB171E93935300A952B8 /* LoginViewController.swift */; };
+		FA5CBB1A1E93A17E00A952B8 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CBB191E93A17E00A952B8 /* MyColors.swift */; };
+		FA5CBB1C1E93AE2700A952B8 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CBB1B1E93AE2700A952B8 /* CustomView.swift */; };
+		FA5CBB1E1E93BD4C00A952B8 /* ForgotPassswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CBB1D1E93BD4B00A952B8 /* ForgotPassswordController.swift */; };
+		FA5CC59A1DFFEAE90058F640 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5CC5991DFFEAE90058F640 /* CoreLocation.framework */; };
+		FA5CC59C1DFFEAF00058F640 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5CC59B1DFFEAF00058F640 /* CoreBluetooth.framework */; };
+		FA81732F1EAE131D00894338 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81732E1EAE131D00894338 /* Pin.swift */; };
+		FA8173311EAE19FC00894338 /* TripDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8173301EAE19FC00894338 /* TripDetailsViewController.swift */; };
+		FAC653AC1E9E23C90038E2B4 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC653AB1E9E23C90038E2B4 /* Trip.swift */; };
+		FAC653AE1E9E23DD0038E2B4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC653AD1E9E23DD0038E2B4 /* Location.swift */; };
+		FAC653B11EA644B60038E2B4 /* TripsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC653B01EA644B50038E2B4 /* TripsListViewController.swift */; };
+		FAC962381E9132F90059DE1E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC962371E9132F90059DE1E /* SignUpViewController.swift */; };
+		FAD28F9C1E716EDE0010E86D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD28F9B1E716EDE0010E86D /* LocationManager.swift */; };
 		FAE331031DF00B7D00B96809 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE331021DF00B7D00B96809 /* AppDelegate.swift */; };
 		FAE331051DF00B7D00B96809 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE331041DF00B7D00B96809 /* LocationViewController.swift */; };
 		FAE331081DF00B7D00B96809 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE331061DF00B7D00B96809 /* Main.storyboard */; };
 		FAE3310A1DF00B7D00B96809 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE331091DF00B7D00B96809 /* Assets.xcassets */; };
 		FAE3310D1DF00B7D00B96809 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE3310B1DF00B7D00B96809 /* LaunchScreen.storyboard */; };
+		FAE6338B1E80325500C3D424 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6338A1E80325500C3D424 /* Utils.swift */; };
+		FAE95A971EAF66FA0016FECE /* EditOrAddBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE95A961EAF66F90016FECE /* EditOrAddBeaconViewController.swift */; };
+		FAF991961E95204B004B17DF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF991951E95204B004B17DF /* libsqlite3.tbd */; };
+		FAF9919E1E964115004B17DF /* AddBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9919D1E964115004B17DF /* AddBeaconViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63BF0C382AF7A05861904F84 /* Pods-MileageTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MileageTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MileageTracker/Pods-MileageTracker.release.xcconfig"; sourceTree = "<group>"; };
+		6FCDC874464D3CFB74488F69 /* Pods-MileageTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MileageTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MileageTracker/Pods-MileageTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		A2AC58BC23DC2F03BD12774C /* Pods_MileageTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MileageTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0E026A1E978D4000526012 /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		FA0E026C1E97D35A00526012 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		FA0E026E1E97E57400526012 /* CustomIconColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIconColorButton.swift; sourceTree = "<group>"; };
+		FA0E02721E9BD79000526012 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FA190A7D1EA7683B009B32A8 /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		FA5CBB111E92948F00A952B8 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		FA5CBB131E9385F300A952B8 /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		FA5CBB151E93921F00A952B8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FA5CBB171E93935300A952B8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FA5CBB191E93A17E00A952B8 /* MyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
+		FA5CBB1B1E93AE2700A952B8 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		FA5CBB1D1E93BD4B00A952B8 /* ForgotPassswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassswordController.swift; sourceTree = "<group>"; };
+		FA5CC5991DFFEAE90058F640 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FA5CC59B1DFFEAF00058F640 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		FA81732E1EAE131D00894338 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		FA8173301EAE19FC00894338 /* TripDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDetailsViewController.swift; sourceTree = "<group>"; };
+		FAC653AB1E9E23C90038E2B4 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		FAC653AD1E9E23DD0038E2B4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		FAC653B01EA644B50038E2B4 /* TripsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsListViewController.swift; sourceTree = "<group>"; };
+		FAC962371E9132F90059DE1E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FAD28F9B1E716EDE0010E86D /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FAE330FF1DF00B7D00B96809 /* MileageTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MileageTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE331021DF00B7D00B96809 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE331041DF00B7D00B96809 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +72,11 @@
 		FAE331091DF00B7D00B96809 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAE3310C1DF00B7D00B96809 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAE3310E1DF00B7D00B96809 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAE6338A1E80325500C3D424 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FAE95A961EAF66F90016FECE /* EditOrAddBeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditOrAddBeaconViewController.swift; sourceTree = "<group>"; };
+		FAF991951E95204B004B17DF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		FAF9919D1E964115004B17DF /* AddBeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBeaconViewController.swift; sourceTree = "<group>"; };
+		FAFE09431E705B6000C285FF /* MileageTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MileageTracker.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +84,101 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF991961E95204B004B17DF /* libsqlite3.tbd in Frameworks */,
+				FA5CC59C1DFFEAF00058F640 /* CoreBluetooth.framework in Frameworks */,
+				FA5CC59A1DFFEAE90058F640 /* CoreLocation.framework in Frameworks */,
+				E76A304804B587F287DDA709 /* Pods_MileageTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80EEAB89AAE4013E2A020FBA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FCDC874464D3CFB74488F69 /* Pods-MileageTracker.debug.xcconfig */,
+				63BF0C382AF7A05861904F84 /* Pods-MileageTracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA4CB9C01E93C73D00287AB5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAC653AF1E9E25EB0038E2B4 /* ParentViewControllers */,
+				FA0E02721E9BD79000526012 /* ProfileViewController.swift */,
+				FA0E026C1E97D35A00526012 /* CalendarViewController.swift */,
+				FAE95A961EAF66F90016FECE /* EditOrAddBeaconViewController.swift */,
+				FAE331041DF00B7D00B96809 /* LocationViewController.swift */,
+				FA5CBB1D1E93BD4B00A952B8 /* ForgotPassswordController.swift */,
+				FAC962371E9132F90059DE1E /* SignUpViewController.swift */,
+				FA5CBB171E93935300A952B8 /* LoginViewController.swift */,
+				FAF9919D1E964115004B17DF /* AddBeaconViewController.swift */,
+				FAC653B01EA644B50038E2B4 /* TripsListViewController.swift */,
+				FA8173301EAE19FC00894338 /* TripDetailsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA5CC5981DFFEAE90058F640 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAF991951E95204B004B17DF /* libsqlite3.tbd */,
+				FA5CC59B1DFFEAF00058F640 /* CoreBluetooth.framework */,
+				FA5CC5991DFFEAE90058F640 /* CoreLocation.framework */,
+				A2AC58BC23DC2F03BD12774C /* Pods_MileageTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAC653A41E9E22E90038E2B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA0E026A1E978D4000526012 /* Beacon.swift */,
+				FAC653AB1E9E23C90038E2B4 /* Trip.swift */,
+				FAC653AD1E9E23DD0038E2B4 /* Location.swift */,
+				FA81732E1EAE131D00894338 /* Pin.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FAC653A51E9E22FB0038E2B4 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FA5CBB1B1E93AE2700A952B8 /* CustomView.swift */,
+				FA0E026E1E97E57400526012 /* CustomIconColorButton.swift */,
+				FA5CBB131E9385F300A952B8 /* RoundImageView.swift */,
+				FA190A7D1EA7683B009B32A8 /* TripTableViewCell.swift */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		FAC653A61E9E23340038E2B4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FA5CBB151E93921F00A952B8 /* Extensions.swift */,
+				FAE6338A1E80325500C3D424 /* Utils.swift */,
+				FA5CBB191E93A17E00A952B8 /* MyColors.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		FAC653AF1E9E25EB0038E2B4 /* ParentViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA5CBB111E92948F00A952B8 /* FormViewController.swift */,
+			);
+			name = ParentViewControllers;
+			sourceTree = "<group>";
+		};
 		FAE330F61DF00B7C00B96809 = {
 			isa = PBXGroup;
 			children = (
 				FAE331011DF00B7D00B96809 /* MileageTracker */,
 				FAE331001DF00B7D00B96809 /* Products */,
+				FA5CC5981DFFEAE90058F640 /* Frameworks */,
+				80EEAB89AAE4013E2A020FBA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +193,17 @@
 		FAE331011DF00B7D00B96809 /* MileageTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FAC653A61E9E23340038E2B4 /* Utils */,
+				FAC653A51E9E22FB0038E2B4 /* CustomViews */,
+				FAC653A41E9E22E90038E2B4 /* Models */,
+				FAFE09431E705B6000C285FF /* MileageTracker.entitlements */,
+				FAE3310E1DF00B7D00B96809 /* Info.plist */,
 				FAE331021DF00B7D00B96809 /* AppDelegate.swift */,
-				FAE331041DF00B7D00B96809 /* LocationViewController.swift */,
-				FAE331061DF00B7D00B96809 /* Main.storyboard */,
+				FAD28F9B1E716EDE0010E86D /* LocationManager.swift */,
 				FAE331091DF00B7D00B96809 /* Assets.xcassets */,
 				FAE3310B1DF00B7D00B96809 /* LaunchScreen.storyboard */,
-				FAE3310E1DF00B7D00B96809 /* Info.plist */,
+				FAE331061DF00B7D00B96809 /* Main.storyboard */,
+				FA4CB9C01E93C73D00287AB5 /* ViewControllers */,
 			);
 			path = MileageTracker;
 			sourceTree = "<group>";
@@ -71,9 +215,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAE331111DF00B7D00B96809 /* Build configuration list for PBXNativeTarget "MileageTracker" */;
 			buildPhases = (
+				2CB1322CD35C2BCC9FDD2A65 /* [CP] Check Pods Manifest.lock */,
 				FAE330FB1DF00B7C00B96809 /* Sources */,
 				FAE330FC1DF00B7C00B96809 /* Frameworks */,
 				FAE330FD1DF00B7C00B96809 /* Resources */,
+				8C79C7735550108C8CB3442A /* [CP] Embed Pods Frameworks */,
+				4545D30B410293CC494D48DE /* [CP] Copy Pods Resources */,
+				FA190A7F1EA798EB009B32A8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -91,7 +239,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Vlad Alexandru";
 				TargetAttributes = {
 					FAE330FE1DF00B7C00B96809 = {
@@ -100,6 +248,12 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -137,12 +291,95 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CB1322CD35C2BCC9FDD2A65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4545D30B410293CC494D48DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MileageTracker/Pods-MileageTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C79C7735550108C8CB3442A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MileageTracker/Pods-MileageTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA190A7F1EA798EB009B32A8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 3703c828d3d96ec9bd6f75e0445f184be9c0271e ae4943d7f9746f483fd840e63a43fe88661594ae53099167da9babefa4ff71c7";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FAE330FB1DF00B7C00B96809 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5CBB181E93935300A952B8 /* LoginViewController.swift in Sources */,
+				FA81732F1EAE131D00894338 /* Pin.swift in Sources */,
 				FAE331051DF00B7D00B96809 /* LocationViewController.swift in Sources */,
+				FA0E02731E9BD79000526012 /* ProfileViewController.swift in Sources */,
+				FA8173311EAE19FC00894338 /* TripDetailsViewController.swift in Sources */,
+				FA0E026F1E97E57400526012 /* CustomIconColorButton.swift in Sources */,
+				FA5CBB121E92948F00A952B8 /* FormViewController.swift in Sources */,
+				FAF9919E1E964115004B17DF /* AddBeaconViewController.swift in Sources */,
+				FA5CBB1E1E93BD4C00A952B8 /* ForgotPassswordController.swift in Sources */,
+				FA5CBB1C1E93AE2700A952B8 /* CustomView.swift in Sources */,
+				FA5CBB1A1E93A17E00A952B8 /* MyColors.swift in Sources */,
+				FAC962381E9132F90059DE1E /* SignUpViewController.swift in Sources */,
+				FA0E026D1E97D35A00526012 /* CalendarViewController.swift in Sources */,
+				FAC653AE1E9E23DD0038E2B4 /* Location.swift in Sources */,
+				FAC653AC1E9E23C90038E2B4 /* Trip.swift in Sources */,
+				FAD28F9C1E716EDE0010E86D /* LocationManager.swift in Sources */,
+				FA5CBB141E9385F400A952B8 /* RoundImageView.swift in Sources */,
+				FA190A7E1EA7683B009B32A8 /* TripTableViewCell.swift in Sources */,
+				FAE6338B1E80325500C3D424 /* Utils.swift in Sources */,
+				FA0E026B1E978D4100526012 /* Beacon.swift in Sources */,
+				FAC653B11EA644B60038E2B4 /* TripsListViewController.swift in Sources */,
+				FAE95A971EAF66FA0016FECE /* EditOrAddBeaconViewController.swift in Sources */,
+				FA5CBB161E93921F00A952B8 /* Extensions.swift in Sources */,
 				FAE331031DF00B7D00B96809 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +424,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -237,6 +475,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -264,10 +503,17 @@
 		};
 		FAE331121DF00B7D00B96809 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FCDC874464D3CFB74488F69 /* Pods-MileageTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MileageTracker/MileageTracker.entitlements;
 				DEVELOPMENT_TEAM = CL9YRV2CK8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MileageTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ab4.MileageTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -277,10 +523,17 @@
 		};
 		FAE331131DF00B7D00B96809 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63BF0C382AF7A05861904F84 /* Pods-MileageTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MileageTracker/MileageTracker.entitlements;
 				DEVELOPMENT_TEAM = CL9YRV2CK8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MileageTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ab4.MileageTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -307,6 +560,7 @@
 				FAE331131DF00B7D00B96809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
