@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foaie de parcurs</title>
+    
+               <style>
+                .container{
+                    max-width:800px;
+                    margin:auto;
+                    padding:30px;
+                    font-size:16px;
+                    line-height:24px;
+                    font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+                    color:#555;
+                }
+            
+          .container table{
+                border-collapse: collapse;
+                width:100%;
+                line-height:inherit;
+                text-align:left;
+            }
+            
+                   .container table, th, td{
+                          border : 1px solid black;
+
+                   }
+            
+            .container table td{
+                padding:5px;
+                vertical-align:top;
+            }
+            .container table th{
+                text-align: center;
+                vertical-align: middle;
+            }
+            
+            .container table tr td:nth-child(2){
+                text-align:right;
+            }
+            
+            .container table tr.top table td{
+                padding-bottom:20px;
+            }
+            
+            .container table tr.top table td.title{
+                font-size:45px;
+                line-height:45px;
+                color:#333;
+            }
+            
+            .container table tr.information table td{
+                padding-bottom:40px;
+            }
+            
+            .container table tr.heading td{
+                background:#eee;
+                font-weight:bold;
+            }
+            
+            .container table tr.details td{
+                padding-bottom:20px;
+            }
+            
+            .container table tr.item td{
+            }
+            
+            .container table tr.item.last td{
+                border-bottom:none;
+            }
+            
+            .container table tr.total td:nth-child(2){
+                font-weight:bold;
+            }
+            
+            @media only screen and (max-width: 600px) {
+                .container table tr.top table td{
+                    width:100%;
+                    display:block;
+                    text-align:center;
+                }
+                
+                .container table tr.information table td{
+                    width:100%;
+                    display:block;
+                    text-align:center;
+                }
+            }
+            </style>
+    
+</head>
+<body>
+ 
+  <div class="container">
+      <h1 align="center">FOAIE DE PARCURS</h1>
+      <h4 align="center">#LUNA_RAPORT#</h4>
+      <p>Authovehicul: #AUTOVEHICUL#</p>  
+      <p>Sofer: #SOFER#</p>  
+
+    <table class="table table-bordered">
+       <tr>
+        <th colspan="3">Plecare</th>
+        <th colspan="3">Sosire</th>
+        <th rowspan="2">Distanta(Km)</th>
+      </tr>
+      <tr>
+        <th>Adresa</th>
+        <th>Data</th>
+        <th>Ora</th>
+        <th>Adresa</th>
+        <th>Data</th>
+        <th>Ora</th>
+      </tr>
+        #ITEMS#
+    </table>
+    <p align="right">Total: #TOTAL# Km</p>
+
+    </div>
+</body>
+</html>

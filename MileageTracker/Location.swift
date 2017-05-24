@@ -51,6 +51,7 @@ class Location: PFObject{
     class func queryOfflineFor(trip:Trip) -> PFQuery<Location>? {
         let query = PFQuery(className: Location.parseClassName())
         query.fromLocalDatastore()
+        query.limit = 1000
         query.addAscendingOrder("date")
         query.whereKey("trip", equalTo: trip)
         return query as? PFQuery<Location>

@@ -32,16 +32,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             application.registerForRemoteNotifications()
         }
         
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+
+        
         PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
         configureRootViewController()
-        Utils.showNotification(body: "didFinishLaunching")
         
         Fabric.with([Crashlytics.self])
         return true
     }
     
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        completionHandler(.newData)
+    }
+    
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        Utils.showNotification(body: "willFinishLaunching")
         configureParse()
         LocationManager.startMonitoringBeacons()
         return true
@@ -56,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         installation?.setDeviceTokenFrom(deviceToken)
         installation?.saveInBackground()
     }
-    // 2
+
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         if (error as NSError).code == 3010 {
             print("Push notifications are not supported in the iOS Simulator.")
@@ -84,7 +89,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        Utils.showNotification(body: "willTerminate")
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
@@ -139,5 +143,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }else{
             window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginController")
         }
+    }
+    
+    class func getAppDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    func getDocDir() -> String {
+        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     }
 }

@@ -15,11 +15,6 @@ class CustomIconColorButton: UIButton {
             let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
             setImage(tintedImage, for: .normal)
             tintColor = iconColor
-            
-//            imageView?.tintColor = iconColor
-//            imageView?.image = imageView?.image?.withRenderingMode(.alwaysTemplate)
-//            tintColor = iconColor
-        
         }
     }
     

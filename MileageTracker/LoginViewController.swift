@@ -138,8 +138,6 @@ class LoginViewController: FormViewController {
             self.stopActivity()
             Utils.showAlert(controller: self, message: "Vă rugam să vă conectați la internet pentru a vă putea conecta!")
         }
-        
-        
     }
     
     func goToApp(){
@@ -169,7 +167,6 @@ class LoginViewController: FormViewController {
                                             }
                                         })
                                     }
-                                    
                                 }
                             })
                             group.notify(queue: .main, execute: {

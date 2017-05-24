@@ -25,6 +25,40 @@ class TripDetailsViewController: UIViewController, MKMapViewDelegate {
         showTripDetails()
     }
     
+    @IBAction func route(_ sender: Any) {
+        if (annotations.count > 1){
+            for index in 0...annotations.count-2{
+                let request: MKDirectionsRequest = MKDirectionsRequest()
+                let c1 = annotations[index].coordinate
+                let c2 = annotations[index + 1].coordinate
+                request.source = MKMapItem(placemark: MKPlacemark(coordinate: c1))
+                request.destination = MKMapItem(placemark: MKPlacemark(coordinate: c2))
+                request.requestsAlternateRoutes = true
+                request.transportType = .automobile
+                let directions = MKDirections(request: request)
+                
+                directions.calculate (completionHandler: {
+                    (response: MKDirectionsResponse?, error: Error?) in
+                    if (response?.routes) != nil {
+                        var routeResponse = response?.routes
+                        
+                        routeResponse = routeResponse!.sorted(by: {$0.distance < $1.distance})
+                        
+                        if (routeResponse?[0].distance)! < Double(400){
+                            self.mapView.add((routeResponse?[0].polyline)!)
+                        }
+                    } else if let error = error {
+                        print(error.localizedDescription)
+                    }
+                    
+                })
+                
+            }
+        }
+
+    }
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? Pin {
             let identifier = "pin"
@@ -53,6 +87,14 @@ class TripDetailsViewController: UIViewController, MKMapViewDelegate {
         return nil
     }
     
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+        polylineRenderer.strokeColor = UIColor.red
+        polylineRenderer.lineWidth = 4
+        return polylineRenderer
+    }
+
+    
     func showTripDetails(){
         durationLabel.text = trip.endTime.timeIntervalSince(trip.startTime).toHoursMinutesString()
         speedLabel.text = "\(trip.averageSpeed.roundTo(places: 2)) Km/h"
@@ -60,7 +102,7 @@ class TripDetailsViewController: UIViewController, MKMapViewDelegate {
     }
     
     func placeLocationPins(){
-        Location.queryOnlineFor(trip: trip)?.findObjectsInBackground(block: { (locations, error) in
+        Location.queryOfflineFor(trip: trip)?.findObjectsInBackground(block: { (locations, error) in
             if error == nil{
                 for location in locations!{
                     let coordiante = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)

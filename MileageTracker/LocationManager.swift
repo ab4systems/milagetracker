@@ -110,8 +110,8 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
                 }
             }
             
-            guard location.timestamp >= activeTrip.startTime else{
-                Utils.showNotification(body:"old timestamp \(location.timestamp.toString())")
+            guard location.timestamp > activeTrip.startTime else{
+//                Utils.showNotification(body:"old timestamp \(location.timestamp.toString())")
                 return
             }
             
@@ -188,7 +188,6 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
             Utils.showNotification(body: "Did Exit Beacon Region")
             
             self.task = DispatchWorkItem {
-                Utils.showNotification(body: "Time's up")
                 if self.activeTrip == nil{
                     do{
                         self.activeTrip = try Trip.queryForCurrentTrip()?.getFirstObject() as? Trip
@@ -212,6 +211,7 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
                 self.activeTrip = nil
                 self.lastLocation = nil
                 self.task = nil
+                Utils.showNotification(body: "New trip added")
                 self.stopLocationUpdates(manager: manager)
             }
             DispatchQueue.global(qos: .default).asyncAfter(deadline: DispatchTime.now() + 300, execute: task)
@@ -235,9 +235,9 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
     }
     
     func save(location: CLLocation){
-        if lastLocation != nil{
-            Utils.showNotification(body: "accuracy: \(location.horizontalAccuracy) \n distance: \(location.distance(from: self.lastLocation!))")
-        }
+//        if lastLocation != nil{
+//            Utils.showNotification(body: "accuracy: \(location.horizontalAccuracy) \n distance: \(location.distance(from: self.lastLocation!))")
+//        }
         let pLocation = Location(latitude: location.coordinate.latitude,
                                  longitude: location.coordinate.longitude,
                                  speed: location.speed < 0 ? 0 : location.speed * 3.6,

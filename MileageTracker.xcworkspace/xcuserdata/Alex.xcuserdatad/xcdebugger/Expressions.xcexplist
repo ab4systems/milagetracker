@@ -3,7 +3,23 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ProfileViewController.tableView(UITableView, editActionsForRowAt : IndexPath) -&gt; [UITableViewRowAction]?:ProfileViewController.swift">
+         contextName = "ProfileViewController.showUserInfo() -&gt; ():ProfileViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ReportComposer.exportHTMLContentToPDF(HTMLContent : String) -&gt; ():ReportComposer.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "printPageRenderer.numberOfPages">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChartViewController.(setChart(dataPoints : [Int], values : [Double]) -&gt; ()).(closure #1):ChartViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "distanceData">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "LocationManager.locationManager(CLLocationManager, didUpdateLocations : [CLLocation]) -&gt; ():LocationManager.swift">
@@ -17,23 +33,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LocationManager.locationManager(CLLocationManager, didEnterRegion : CLRegion) -&gt; ():LocationManager.swift">
+         contextName = "AppDelegate.application(UIApplication, didReceiveRemoteNotification : [AnyHashable : Any], fetchCompletionHandler : (UIBackgroundFetchResult) -&gt; ()) -&gt; ():AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "region">
-            </PersistentString>
-            <PersistentString
-               value = "(region as! CLBeaconRegion)">
+               value = "aps[&quot;content-available&quot;] as! Int">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LocationManager.(locationManager(CLLocationManager, didUpdateLocations : [CLLocation]) -&gt; ()).(closure #1):LocationManager.swift">
+         contextName = "ProfileViewController.tableView(UITableView, editActionsForRowAt : IndexPath) -&gt; [UITableViewRowAction]?:ProfileViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "TripsListViewController.(viewDidLoad() -&gt; ()).(closure #1):TripsListViewController.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "(objects[0] as! Trip).beacon">
+            </PersistentString>
             <PersistentString
                value = "error?.localizedDescription">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.(goToApp() -&gt; ()).(closure #1).(closure #1):LoginViewController.swift">
       </ContextState>
       <ContextState
          contextName = "SavedScansController.(presentedDateUpdated(CVDate) -&gt; ()).(closure #1):CalendarViewController.swift">
@@ -47,9 +69,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LoginViewController.(goToApp() -&gt; ()).(closure #1).(closure #1):LoginViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "TripTableViewCell.(prepareCell(trip : Trip) -&gt; ()).(closure #1).(closure #1):TripTableViewCell.swift">
          <PersistentStrings>
             <PersistentString
@@ -61,43 +80,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LocationViewController.(showLocations(Any) -&gt; ()).(closure #1):LocationViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "error.localizedDescription">
-            </PersistentString>
-            <PersistentString
-               value = "object as! Trip">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "LoginViewController.(goToApp() -&gt; ()).(closure #1).(closure #1).(closure #1):LoginViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "LoginViewController.(fbLoginAction(Any) -&gt; ()).(closure #1):LoginViewController.swift">
+         contextName = "EditOrAddBeaconViewController.viewDidLoad() -&gt; ():EditOrAddBeaconViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "FBSDKAccessToken.current()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static LocationManager.(setupBeacon() -&gt; ()).(closure #1):LocationManager.swift">
-      </ContextState>
-      <ContextState
-         contextName = "SignUpViewController.(signUp(Any) -&gt; ()).(closure #1).(closure #1).(closure #1):SignUpViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SavedScansController.didSelectDayView(CVCalendarDayView, animationDidFinish : Bool) -&gt; ():CalendarViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "dayView.dayLabel.textColor == MyColors.mainColor">
+               value = "saveButton.currentTitle">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -119,6 +108,20 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "LocationViewController.(showLocations(Any) -&gt; ()).(closure #1).(closure #1):LocationViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.userNotificationCenter(UNUserNotificationCenter, willPresent : UNNotification, withCompletionHandler : (UNNotificationPresentationOptions) -&gt; ()) -&gt; ():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "notification.request.content.userInfo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LocationViewController.(viewDidLoad() -&gt; ()).(closure #1):LocationViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "LoginViewController.(fbLoginAction(Any) -&gt; ()).(closure #1).(closure #1):LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -127,20 +130,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "AppDelegate.application(UIApplication, didReceiveRemoteNotification : [AnyHashable : Any], fetchCompletionHandler : (UIBackgroundFetchResult) -&gt; ()) -&gt; ():AppDelegate.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "aps[&quot;content-available&quot;] as! Int">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SignUpViewController.(signUp(Any) -&gt; ()).(closure #1):SignUpViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "                        (error as! NSError).code&#10;">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "static LocationManager.(setupBeacon() -&gt; ()).(closure #1):LocationManager.swift">
       </ContextState>
       <ContextState
          contextName = "TripTableViewCell.prepareCell(trip : Trip) -&gt; ():TripTableViewCell.swift">
@@ -157,13 +147,37 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ProfileViewController.showUserInfo() -&gt; ():ProfileViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "LoginViewController.viewDidLoad() -&gt; ():LoginViewController.swift">
+         contextName = "LocationManager.(locationManager(CLLocationManager, didUpdateLocations : [CLLocation]) -&gt; ()).(closure #1):LocationManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "PFUser.current().email">
+               value = "error?.localizedDescription">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.(fbLoginAction(Any) -&gt; ()).(closure #1):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "FBSDKAccessToken.current()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LocationManager.locationManager(CLLocationManager, didEnterRegion : CLRegion) -&gt; ():LocationManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "region">
+            </PersistentString>
+            <PersistentString
+               value = "(region as! CLBeaconRegion)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SignUpViewController.(signUp(Any) -&gt; ()).(closure #1).(closure #1).(closure #1):SignUpViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -176,43 +190,80 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "static Trip.queryForMonth(date : Date) -&gt; PFQuery&lt;Trip&gt;?:Trip.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "date.endOfMonth()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SavedScansController.didSelectDayView(CVCalendarDayView, animationDidFinish : Bool) -&gt; ():CalendarViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dayView.dayLabel.textColor == MyColors.mainColor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ReportComposer.renderReport(car : String, driver : String, date : String, items : [Trip]) -&gt; String!:ReportComposer.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item.endPlace">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CarTableViewCell.(prepareCell(car : Beacon) -&gt; ()).(closure #1):CarTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dates">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TripsListViewController.(viewDidLoad() -&gt; ()).(closure #2):TripsListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "error.localizedDescription">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.viewDidLoad() -&gt; ():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "PFUser.current().email">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SignUpViewController.(signUp(Any) -&gt; ()).(closure #1):SignUpViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "                        (error as! NSError).code&#10;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SavedScansController.(reloadTrips(date : Date) -&gt; ()).(closure #1):CalendarViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Calendar.current.component(.weekday, from: trip.startTime)">
-            </PersistentString>
-            <PersistentString
                value = "trip.startTime">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "TripsListViewController.(viewDidLoad() -&gt; ()).(closure #1):TripsListViewController.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "(objects[0] as! Trip).beacon">
+               value = "cvDate.weekDay()!.rawValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LocationViewController.(showLocations(Any) -&gt; ()).(closure #1).(closure #1):LocationViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "AppDelegate.userNotificationCenter(UNUserNotificationCenter, willPresent : UNNotification, withCompletionHandler : (UNNotificationPresentationOptions) -&gt; ()) -&gt; ():AppDelegate.swift">
+         contextName = "LocationViewController.(showLocations(Any) -&gt; ()).(closure #1):LocationViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "notification.request.content.userInfo">
+               value = "error.localizedDescription">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LocationViewController.(viewDidLoad() -&gt; ()).(closure #1):LocationViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "EditOrAddBeaconViewController.viewDidLoad() -&gt; ():EditOrAddBeaconViewController.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "saveButton.currentTitle">
+               value = "object as! Trip">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

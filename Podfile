@@ -10,4 +10,5 @@ target 'MileageTracker' do
     pod 'CVCalendar', '~> 1.5'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'Charts'
 end

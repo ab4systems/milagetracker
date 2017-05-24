@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3vE-fC-BeM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3vE-fC-BeM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -204,6 +204,7 @@
                     <connections>
                         <segue destination="obR-o6-U9d" kind="relationship" relationship="viewControllers" id="QC1-l5-dRJ"/>
                         <segue destination="P61-Th-B6w" kind="relationship" relationship="viewControllers" id="gyH-08-hnB"/>
+                        <segue destination="Qmy-7k-ewn" kind="relationship" relationship="viewControllers" id="5zS-Hm-KBS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdh-sL-nVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -434,6 +435,209 @@
             </objects>
             <point key="canvasLocation" x="725.60000000000002" y="-706.59670164917543"/>
         </scene>
+        <!--Rapoarte-->
+        <scene sceneID="YaL-Ma-mTJ">
+            <objects>
+                <navigationController id="Qmy-7k-ewn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Rapoarte" image="ic_reports" id="3FP-Cs-QCC"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="3IL-kQ-KJL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.29803921568627451" green="0.20000000000000001" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BCW-tu-BAD" kind="relationship" relationship="rootViewController" id="L6H-c9-xd4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pSq-Be-PwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-247" y="-2337"/>
+        </scene>
+        <!--Autovehicule-->
+        <scene sceneID="YoK-DX-eEV">
+            <objects>
+                <tableViewController id="BCW-tu-BAD" customClass="ReportCarsViewController" customModule="MileageTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="195" sectionHeaderHeight="28" sectionFooterHeight="28" id="uLY-ye-cC6">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="carReportsCell" id="s1G-yG-Gtv" customClass="CarTableViewCell" customModule="MileageTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="195"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s1G-yG-Gtv" id="u0i-tC-SuX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="194.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Chevrolet Cruze" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIa-Cr-6qi">
+                                            <rect key="frame" x="16" y="16" width="343" height="88"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.29735217749999998" green="0.1981016484" blue="0.61488569329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_next_white" translatesAutoresizingMaskIntoConstraints="NO" id="vzo-dw-1Jx" customClass="CustomColorIcon" customModule="MileageTracker" customModuleProvider="target">
+                                            <rect key="frame" x="329" y="82" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="07T-33-Lna"/>
+                                                <constraint firstAttribute="width" secondItem="vzo-dw-1Jx" secondAttribute="height" multiplier="1:1" id="3Qj-yY-dZD"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                    <color key="value" red="0.29735217749999998" green="0.1981016484" blue="0.61488569329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 calatorii " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRL-8Y-QOd">
+                                            <rect key="frame" x="16" y="120.5" width="343" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="375 Km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcD-G3-ne5">
+                                            <rect key="frame" x="16" y="157.5" width="343" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vzo-dw-1Jx" firstAttribute="centerY" secondItem="u0i-tC-SuX" secondAttribute="centerY" id="1WP-C7-Ljf"/>
+                                        <constraint firstItem="pIa-Cr-6qi" firstAttribute="leading" secondItem="u0i-tC-SuX" secondAttribute="leading" constant="16" id="Cwt-8C-FHh"/>
+                                        <constraint firstAttribute="trailing" secondItem="vzo-dw-1Jx" secondAttribute="trailing" constant="16" id="EEt-Pe-U1q"/>
+                                        <constraint firstItem="hcD-G3-ne5" firstAttribute="top" secondItem="GRL-8Y-QOd" secondAttribute="bottom" constant="16" id="J8d-ay-m0m"/>
+                                        <constraint firstAttribute="trailing" secondItem="hcD-G3-ne5" secondAttribute="trailing" constant="16" id="JF9-3m-q0c"/>
+                                        <constraint firstItem="pIa-Cr-6qi" firstAttribute="top" secondItem="u0i-tC-SuX" secondAttribute="top" constant="16" id="Pib-Wm-d00"/>
+                                        <constraint firstItem="GRL-8Y-QOd" firstAttribute="top" secondItem="pIa-Cr-6qi" secondAttribute="bottom" constant="16" id="dPO-7F-jbh"/>
+                                        <constraint firstAttribute="trailing" secondItem="pIa-Cr-6qi" secondAttribute="trailing" constant="16" id="gxm-E4-gyT"/>
+                                        <constraint firstAttribute="bottom" secondItem="hcD-G3-ne5" secondAttribute="bottom" constant="16" id="hZV-kl-6Ye"/>
+                                        <constraint firstItem="hcD-G3-ne5" firstAttribute="leading" secondItem="u0i-tC-SuX" secondAttribute="leading" constant="16" id="nC5-gV-f4g"/>
+                                        <constraint firstAttribute="trailing" secondItem="GRL-8Y-QOd" secondAttribute="trailing" constant="16" id="wJd-KN-Y86"/>
+                                        <constraint firstItem="GRL-8Y-QOd" firstAttribute="leading" secondItem="u0i-tC-SuX" secondAttribute="leading" constant="16" id="zJa-aj-aTB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="distanceLabel" destination="hcD-G3-ne5" id="Nhw-Tc-UZ8"/>
+                                    <outlet property="nameLabel" destination="pIa-Cr-6qi" id="XiD-6x-8Eo"/>
+                                    <outlet property="nrTripsLabel" destination="GRL-8Y-QOd" id="vYA-GS-eMw"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BCW-tu-BAD" id="1Ga-ah-7vQ"/>
+                            <outlet property="delegate" destination="BCW-tu-BAD" id="fJC-qL-Bf5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Autovehicule" id="1Av-c2-auQ"/>
+                    <connections>
+                        <segue destination="K0d-22-y2G" kind="show" identifier="goToMonths" id="hgl-8y-0iE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SUY-z4-9yx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="-2337"/>
+        </scene>
+        <!--Rapoarte lunare-->
+        <scene sceneID="ARj-fY-lpu">
+            <objects>
+                <tableViewController id="K0d-22-y2G" customClass="MonthsViewController" customModule="MileageTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aFZ-fq-HaR">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="monthCell" editingAccessoryType="disclosureIndicator" textLabel="cSR-FG-ve7" style="IBUITableViewCellStyleDefault" id="FJ1-AS-JUI">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FJ1-AS-JUI" id="dWJ-yV-cgW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cSR-FG-ve7">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.29803921570000003" green="0.20000000000000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="K0d-22-y2G" id="xRh-lS-A6a"/>
+                            <outlet property="delegate" destination="K0d-22-y2G" id="Nsm-GI-Yw5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Rapoarte lunare" id="n1p-S4-dVh"/>
+                    <connections>
+                        <segue destination="cF6-wV-Nsa" kind="show" identifier="goToChart" id="Ri9-ZK-3LW"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yPT-Mo-qsv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639" y="-2337"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="FLd-tC-Sg5">
+            <objects>
+                <viewController id="cF6-wV-Nsa" customClass="ChartViewController" customModule="MileageTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HmN-L7-7tl"/>
+                        <viewControllerLayoutGuide type="bottom" id="MJJ-i4-Zuq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GqK-9p-zfD">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAL-RF-bKa" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="408"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAS-4Y-SHW">
+                                <rect key="frame" x="24" y="456" width="327" height="50"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.20000000000000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kpL-tx-q4E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Generează raport">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addBeacon:" destination="0zz-HC-OyG" eventType="touchUpInside" id="trj-aw-9sd"/>
+                                    <segue destination="VuG-qh-KHG" kind="show" identifier="seeReport" id="Akw-fe-6Yh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aAS-4Y-SHW" firstAttribute="leading" secondItem="GqK-9p-zfD" secondAttribute="leading" constant="24" id="7D8-eb-M9C"/>
+                            <constraint firstAttribute="trailing" secondItem="aAS-4Y-SHW" secondAttribute="trailing" constant="24" id="7z4-bu-Xno"/>
+                            <constraint firstItem="aAS-4Y-SHW" firstAttribute="top" secondItem="EAL-RF-bKa" secondAttribute="bottom" constant="48" id="OJ7-vo-ASs"/>
+                            <constraint firstAttribute="trailing" secondItem="EAL-RF-bKa" secondAttribute="trailing" id="Qvh-9l-DGR"/>
+                            <constraint firstItem="EAL-RF-bKa" firstAttribute="leading" secondItem="GqK-9p-zfD" secondAttribute="leading" id="WYd-Ll-YSb"/>
+                            <constraint firstItem="EAL-RF-bKa" firstAttribute="top" secondItem="HmN-L7-7tl" secondAttribute="bottom" id="Xdr-ot-WbC"/>
+                            <constraint firstItem="MJJ-i4-Zuq" firstAttribute="top" secondItem="aAS-4Y-SHW" secondAttribute="bottom" constant="48" id="bsE-6R-2yR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="69y-6d-TuZ"/>
+                    <connections>
+                        <outlet property="barChartView" destination="EAL-RF-bKa" id="Zo7-4u-3Ze"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="saF-Jy-dDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2616.8000000000002" y="-2337.481259370315"/>
+        </scene>
         <!--Item-->
         <scene sceneID="UUV-hU-GNx">
             <objects>
@@ -446,7 +650,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wd8-Fh-ZAc">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wd8-Fh-ZAc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQp-vh-vrq">
@@ -464,13 +668,13 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="0.0" maxValue="360" translatesAutoresizingMaskIntoConstraints="NO" id="4La-vr-1TB">
-                                <rect key="frame" x="34" y="568" width="307" height="31"/>
+                                <rect key="frame" x="34" y="617" width="307" height="31"/>
                                 <connections>
                                     <action selector="changeAngle:" destination="ZLk-Pt-vAU" eventType="valueChanged" id="ze2-zP-fvN"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwE-ez-yOi">
-                                <rect key="frame" x="177" y="539" width="21" height="21"/>
+                                <rect key="frame" x="177" y="588" width="21" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -502,7 +706,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oz6-eO-ADD" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="-2303"/>
+            <point key="canvasLocation" x="3354" y="-3256"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ybL-wt-8vC">
@@ -530,7 +734,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jj5-uf-Roc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5156" y="-914"/>
+            <point key="canvasLocation" x="-5266" y="-937"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="sq7-mp-khg">
@@ -804,7 +1008,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtK-fH-RDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4258" y="-935"/>
+            <point key="canvasLocation" x="-4117" y="-936"/>
         </scene>
         <!--Forgot Password Controller-->
         <scene sceneID="yup-EX-KGw">
@@ -921,7 +1125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEN-Eq-Jh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4258" y="-1685"/>
+            <point key="canvasLocation" x="-4699" y="-937"/>
         </scene>
         <!--Add Beacon View Controller-->
         <scene sceneID="gTU-Ca-iSt">
@@ -1575,12 +1779,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4W-9t-83D">
+                                <rect key="frame" x="319" y="508" width="40" height="30"/>
+                                <state key="normal" title="Route"/>
+                                <connections>
+                                    <action selector="route:" destination="DBv-EX-ZRZ" eventType="touchUpInside" id="b21-ht-Mdu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="O4W-9t-83D" secondAttribute="trailing" constant="16" id="CHi-hI-0yS"/>
                             <constraint firstItem="pIz-SS-jzM" firstAttribute="top" secondItem="noo-mS-Qgx" secondAttribute="bottom" id="Ckj-j4-Xjh"/>
                             <constraint firstItem="U23-m3-E6W" firstAttribute="top" secondItem="pIz-SS-jzM" secondAttribute="bottom" id="GTj-bH-zB6"/>
                             <constraint firstItem="noo-mS-Qgx" firstAttribute="leading" secondItem="qgu-fS-6MD" secondAttribute="leading" id="NRb-KH-FDK"/>
+                            <constraint firstItem="U23-m3-E6W" firstAttribute="top" secondItem="O4W-9t-83D" secondAttribute="bottom" constant="16" id="OXz-VT-rrt"/>
                             <constraint firstAttribute="trailing" secondItem="pIz-SS-jzM" secondAttribute="trailing" id="TnP-tp-NNk"/>
                             <constraint firstAttribute="trailing" secondItem="noo-mS-Qgx" secondAttribute="trailing" id="c86-2Z-1IB"/>
                             <constraint firstItem="noo-mS-Qgx" firstAttribute="top" secondItem="Apg-17-kWc" secondAttribute="bottom" id="hIy-Aj-ST2"/>
@@ -1722,15 +1935,57 @@
             </objects>
             <point key="canvasLocation" x="1478" y="-706"/>
         </scene>
+        <!--Report Preview View Controller-->
+        <scene sceneID="kNk-wc-5iK">
+            <objects>
+                <viewController id="VuG-qh-KHG" customClass="ReportPreviewViewController" customModule="MileageTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3g0-Co-ZXB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zfr-oW-vhB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jEl-Ns-F1m">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView opaque="NO" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WIE-XE-Rpw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WIE-XE-Rpw" firstAttribute="leading" secondItem="jEl-Ns-F1m" secondAttribute="leading" id="DW1-s8-xxs"/>
+                            <constraint firstItem="Zfr-oW-vhB" firstAttribute="top" secondItem="WIE-XE-Rpw" secondAttribute="bottom" id="RZK-FQ-zgr"/>
+                            <constraint firstItem="WIE-XE-Rpw" firstAttribute="top" secondItem="3g0-Co-ZXB" secondAttribute="bottom" id="k7U-In-BBi"/>
+                            <constraint firstAttribute="trailing" secondItem="WIE-XE-Rpw" secondAttribute="trailing" id="pv5-HU-jQ6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vy8-6v-akD">
+                        <barButtonItem key="rightBarButtonItem" title="Email" id="Ssm-4w-PsB">
+                            <connections>
+                                <action selector="sendEmail:" destination="VuG-qh-KHG" id="PPS-qD-6WM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webPreview" destination="WIE-XE-Rpw" id="aQm-3f-keZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zie-tR-D90" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3638" y="-2337"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CarLogoBlack" width="1334" height="438"/>
         <image name="car" width="79" height="32"/>
         <image name="ic_arrow_back_white" width="24" height="24"/>
+        <image name="ic_arrow_next_white" width="24" height="24"/>
         <image name="ic_car" width="25" height="17"/>
         <image name="ic_forgot_password" width="45" height="59"/>
         <image name="ic_password" width="54" height="65"/>
         <image name="ic_plus" width="24" height="24"/>
+        <image name="ic_reports" width="22" height="22"/>
         <image name="ic_user" width="20" height="22"/>
         <image name="ic_username" width="54" height="58"/>
         <image name="login_banner" width="667" height="225"/>

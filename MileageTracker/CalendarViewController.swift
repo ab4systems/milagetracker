@@ -137,8 +137,14 @@ class SavedScansController: UIViewController, CVCalendarViewAppearanceDelegate,C
         Trip.queryForMonth(date: date)?.findObjectsInBackground(block: { (trips, error) in
             if error == nil{
                 for trip in trips!{
-                    let week = Calendar(identifier: .gregorian).component(.weekOfMonth, from: trip.startTime)-1
-                    let weekday = Calendar(identifier: .gregorian).component(.weekday, from: trip.startTime)-2
+                    let cvDate = CVDate(date: trip.startTime)
+                    var week = cvDate.week
+                    var weekday = cvDate.weekDay()!.rawValue
+                    if weekday == 1{
+                        weekday = 8
+                    }
+                    week -= 1
+                    weekday -= 2
                     self.calendarView.contentController.presentedMonthView.weekViews[week].dayViews[weekday].dayLabel.textColor = MyColors.mainColor
                     self.calendarView.contentController.presentedMonthView.weekViews[week].dayViews[weekday].tag = 12
                     self.calendarView.contentController.presentedMonthView.weekViews[week].dayViews[weekday].dayLabel.font = UIFont(name: "Avenir-Black",size: 18)

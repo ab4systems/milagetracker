@@ -73,7 +73,7 @@ extension Date {
     }
     
     func endOfMonth() -> Date {
-        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+        return Calendar.current.date(byAdding: DateComponents(month: 1), to: self.startOfMonth())!
     }
     
     func toDateString() -> String {
@@ -81,6 +81,13 @@ extension Date {
         dateFormatter.dateFormat = "dd MMMM yyyy"
         return dateFormatter.string(from: self)
     }
+    
+    func toMonthYearString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM yyyy"
+        return dateFormatter.string(from: self)
+    }
+
     
     func toHourString() -> String {
         let dateFormatter = DateFormatter()
@@ -93,6 +100,7 @@ extension Date {
         dateFormatter.dateFormat = "dd MMMM yyyy HH:mm:ss"
         return dateFormatter.string(from: self)
     }
+    
 }
 
 extension TimeInterval{
@@ -112,5 +120,20 @@ extension Double {
     func roundTo(places:Int) -> Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
+    }
+}
+
+extension Dictionary
+{
+    public init(keys: [Key], values: [Value])
+    {
+        precondition(keys.count == values.count)
+        
+        self.init()
+        
+        for (index, key) in keys.enumerated()
+        {
+            self[key] = values[index]
+        }
     }
 }

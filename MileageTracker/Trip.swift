@@ -42,6 +42,7 @@ class Trip : PFObject{
     class func queryForCurrentTrip() -> PFQuery<PFObject>? {
         let query = PFQuery(className: Trip.parseClassName())
         query.fromLocalDatastore()
+        query.whereKey("user", equalTo: PFUser.current()!)
         query.whereKey("current", equalTo: true)
         return query
     }
@@ -52,6 +53,7 @@ class Trip : PFObject{
         query.includeKey("beacon")
         query.addDescendingOrder("startTime")
         query.whereKey("current", equalTo: false)
+        query.whereKey("user", equalTo: PFUser.current()!)
         return query
     }
     
@@ -61,6 +63,7 @@ class Trip : PFObject{
         query.whereKey("current", equalTo: false)
         query.whereKey("startTime", greaterThan: date.startOfMonth())
         query.whereKey("startTime", lessThan: date.endOfMonth())
+        query.whereKey("user", equalTo: PFUser.current()!)
         query.addDescendingOrder("startTime")
         return query as? PFQuery<Trip>
     }
@@ -83,8 +86,18 @@ class Trip : PFObject{
         query.whereKey("current", equalTo: false)
         query.whereKey("startTime", greaterThan: startDate)
         query.whereKey("startTime", lessThan: endDate)
+        query.whereKey("user", equalTo: PFUser.current()!)
         query.addDescendingOrder("startTime")
         return query
+    }
+    
+    class func queryFor(car:Beacon)-> PFQuery<Trip>?{
+        let query = PFQuery(className: Trip.parseClassName())
+        query.fromLocalDatastore()
+        query.whereKey("user", equalTo: PFUser.current()!)
+        query.whereKey("beacon", equalTo: car)
+        return query as? PFQuery<Trip>
+
     }
 }
 

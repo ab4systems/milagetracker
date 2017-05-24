@@ -89,7 +89,6 @@ class LocationViewController: UIViewController {
         mapView.delegate = self
         slider.value = Float(LocationManager.mainInstance.headingFilter)
         label.text = String(slider.value)
-
     }
 }
 
