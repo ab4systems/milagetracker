@@ -141,67 +141,87 @@ class LoginViewController: FormViewController {
     }
     
     func goToApp(){
-        Beacon.query()!.findObjectsInBackground { (objects, error) in
+        Beacon.queryOffline()?.countObjectsInBackground(block: { (nr, error) in
             if error == nil{
-                if objects?.count != 0{
-                    PFObject.pinAll(inBackground: objects, block: { (success, error) in
-                        if success{
-                            let group = DispatchGroup()
-                            group.enter()
-                            Trip.query()?.findObjectsInBackground(block: { (objects, error) in
-                                if error == nil{
-                                    PFObject.pinAll(inBackground: objects, block: { (success, error) in
-                                        if success{
-                                            group.leave()
-                                        }
-                                    })
-                                    for trip in objects as! [Trip]{
+                if nr > 0{
+                    DispatchQueue.main.async {
+                        LocationManager.mainInstance.startMonitoringBeacons()
+                        self.stopActivity()
+                        UIView.animate(withDuration: 2, delay: 0.0, options: [.curveEaseOut],animations: {
+                            self.carImage.center.x += self.view.bounds.width
+                        },completion: { finished in
+                            let initialVC = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+                            (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = initialVC
+                        })
+                    }
+                }else{
+                    Beacon.query()!.findObjectsInBackground { (objects, error) in
+                        if error == nil{
+                            if objects?.count != 0{
+                                PFObject.pinAll(inBackground: objects, block: { (success, error) in
+                                    if success{
+                                        let group = DispatchGroup()
                                         group.enter()
-                                        Location.queryOnlineFor(trip: trip)?.findObjectsInBackground(block: { (locations, error) in
+                                        Trip.query()?.findObjectsInBackground(block: { (objects, error) in
                                             if error == nil{
-                                                PFObject.pinAll(inBackground: locations, block: { (success, error) in
+                                                PFObject.pinAll(inBackground: objects, block: { (success, error) in
                                                     if success{
                                                         group.leave()
                                                     }
                                                 })
+                                                for trip in objects as! [Trip]{
+                                                    group.enter()
+                                                    Location.queryOnlineFor(trip: trip)?.findObjectsInBackground(block: { (locations, error) in
+                                                        if error == nil{
+                                                            PFObject.pinAll(inBackground: locations, block: { (success, error) in
+                                                                if success{
+                                                                    group.leave()
+                                                                }
+                                                            })
+                                                        }
+                                                    })
+                                                }
                                             }
                                         })
+                                        group.notify(queue: .main, execute: {
+                                            LocationManager.mainInstance.startMonitoringBeacons()
+                                            self.stopActivity()
+                                            UIView.animate(withDuration: 2, delay: 0.0, options: [.curveEaseOut],animations: {
+                                                self.carImage.center.x += self.view.bounds.width
+                                            },completion: { finished in
+                                                let initialVC = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+                                                (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = initialVC
+                                            })
+                                        })
+                                    }else{
+                                        self.stopActivity()
+                                        Utils.showAlert(controller: self, message: "Eroare la conectare. Vă rugăm să reîncercați mai târziu!")
                                     }
-                                }
-                            })
-                            group.notify(queue: .main, execute: {
-                                LocationManager.startMonitoringBeacons()
-                                self.stopActivity()
-                                UIView.animate(withDuration: 2, delay: 0.0, options: [.curveEaseOut],animations: {
-                                    self.carImage.center.x += self.view.bounds.width
-                                },completion: { finished in
-                                    let initialVC = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-                                    (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = initialVC
                                 })
-                            })
+                                
+                            }else{
+                                self.stopActivity()
+                                DispatchQueue.main.async(execute: { () -> Void in
+                                    UIView.animate(withDuration: 2, delay: 0.0, options: [.curveEaseOut],animations: {
+                                        self.carImage.center.x += self.view.bounds.width
+                                    },completion: { finished in
+                                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "AddBeaconViewController") as! AddBeaconViewController
+                                        self.present(vc, animated: true, completion:nil)
+                                    })
+                                })
+                            }
                         }else{
                             self.stopActivity()
                             Utils.showAlert(controller: self, message: "Eroare la conectare. Vă rugăm să reîncercați mai târziu!")
                         }
-                    })
-                    
-                }else{
-                    self.stopActivity()
-                    DispatchQueue.main.async(execute: { () -> Void in
-                        UIView.animate(withDuration: 2, delay: 0.0, options: [.curveEaseOut],animations: {
-                            self.carImage.center.x += self.view.bounds.width
-                        },completion: { finished in
-                            let vc = self.storyboard!.instantiateViewController(withIdentifier: "AddBeaconViewController") as! AddBeaconViewController
-                            self.present(vc, animated: true, completion:nil)
-                        })
-                    })
+                        
+                    }
                 }
             }else{
                 self.stopActivity()
                 Utils.showAlert(controller: self, message: "Eroare la conectare. Vă rugăm să reîncercați mai târziu!")
             }
-            
-        }
+        })
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

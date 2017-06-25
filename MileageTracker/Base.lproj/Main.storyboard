@@ -32,6 +32,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Cont nou" id="8ZU-wL-C71">
+                                        <barButtonItem key="backBarButtonItem" title="Înapoi" id="yK7-pB-s4d"/>
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrow_back_white" id="k8m-gH-Rvh">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
@@ -161,14 +162,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTp-El-uz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3343" y="-935"/>
+            <point key="canvasLocation" x="-3002" y="-940"/>
         </scene>
         <!--Călătorii-->
         <scene sceneID="D3G-ta-Cvf">
             <objects>
                 <navigationController id="obR-o6-U9d" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Călătorii" image="ic_car" id="mdU-lX-vjT"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="H5w-j8-1fI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="H5w-j8-1fI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.20000000000000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -184,7 +185,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UE3-dk-1LZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-247" y="-1538"/>
+            <point key="canvasLocation" x="-247" y="-1540"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1gT-hO-rYE">
@@ -209,14 +210,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdh-sL-nVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1254" y="-935"/>
+            <point key="canvasLocation" x="-961" y="-1540"/>
         </scene>
         <!--Profil-->
         <scene sceneID="hyY-mI-KZC">
             <objects>
                 <navigationController id="P61-Th-B6w" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profil" image="ic_user" id="A2s-xM-Ntx"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="gbt-mR-Dfo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gbt-mR-Dfo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -231,7 +232,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YjM-oT-KBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162" y="-705"/>
+            <point key="canvasLocation" x="-962" y="-854"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="nL7-cg-Ulh">
@@ -415,6 +416,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kSn-X8-9jq">
+                        <barButtonItem key="backBarButtonItem" title="Înapoi" id="Y6u-mU-RLN"/>
                         <barButtonItem key="rightBarButtonItem" title="Deconectare" id="ra3-xK-XTq">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -433,14 +435,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IV5-p0-MbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725.60000000000002" y="-706.59670164917543"/>
+            <point key="canvasLocation" x="-247" y="-854"/>
         </scene>
         <!--Rapoarte-->
         <scene sceneID="YaL-Ma-mTJ">
             <objects>
                 <navigationController id="Qmy-7k-ewn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Rapoarte" image="ic_reports" id="3FP-Cs-QCC"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="3IL-kQ-KJL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3IL-kQ-KJL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -632,81 +634,12 @@
                     <navigationItem key="navigationItem" id="69y-6d-TuZ"/>
                     <connections>
                         <outlet property="barChartView" destination="EAL-RF-bKa" id="Zo7-4u-3Ze"/>
+                        <segue destination="40y-UX-F9M" kind="show" identifier="tripsFromChart" id="LgW-dS-I9z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saF-Jy-dDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2616.8000000000002" y="-2337.481259370315"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="UUV-hU-GNx">
-            <objects>
-                <viewController storyboardIdentifier="LocationViewController" id="ZLk-Pt-vAU" customClass="LocationViewController" customModule="MileageTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7mq-lA-c8P"/>
-                        <viewControllerLayoutGuide type="bottom" id="eCR-Da-F9U"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7oj-KX-X3I">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wd8-Fh-ZAc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQp-vh-vrq">
-                                <rect key="frame" x="281" y="40" width="78" height="30"/>
-                                <state key="normal" title="Show route"/>
-                                <connections>
-                                    <action selector="showRoute:" destination="ZLk-Pt-vAU" eventType="touchUpInside" id="Ram-kY-8pk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWv-Kl-5EN">
-                                <rect key="frame" x="16" y="40" width="104" height="30"/>
-                                <state key="normal" title="Show locations"/>
-                                <connections>
-                                    <action selector="showLocations:" destination="ZLk-Pt-vAU" eventType="touchUpInside" id="Ngp-hi-Kuy"/>
-                                </connections>
-                            </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="0.0" maxValue="360" translatesAutoresizingMaskIntoConstraints="NO" id="4La-vr-1TB">
-                                <rect key="frame" x="34" y="617" width="307" height="31"/>
-                                <connections>
-                                    <action selector="changeAngle:" destination="ZLk-Pt-vAU" eventType="valueChanged" id="ze2-zP-fvN"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwE-ez-yOi">
-                                <rect key="frame" x="177" y="588" width="21" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="mQp-vh-vrq" firstAttribute="trailing" secondItem="7oj-KX-X3I" secondAttribute="trailingMargin" id="3cx-W6-hRk"/>
-                            <constraint firstItem="4La-vr-1TB" firstAttribute="leading" secondItem="7oj-KX-X3I" secondAttribute="leadingMargin" constant="20" id="4ft-bL-TBe"/>
-                            <constraint firstItem="cwE-ez-yOi" firstAttribute="centerX" secondItem="7oj-KX-X3I" secondAttribute="centerX" id="AYx-aM-2Xj"/>
-                            <constraint firstItem="HWv-Kl-5EN" firstAttribute="top" secondItem="7mq-lA-c8P" secondAttribute="bottom" constant="20" id="FAf-h7-Bgx"/>
-                            <constraint firstAttribute="trailing" secondItem="Wd8-Fh-ZAc" secondAttribute="trailing" id="GAF-5f-uVX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4La-vr-1TB" secondAttribute="trailing" constant="20" id="dBb-o8-Aj5"/>
-                            <constraint firstItem="Wd8-Fh-ZAc" firstAttribute="top" secondItem="7oj-KX-X3I" secondAttribute="top" id="gl1-86-08I"/>
-                            <constraint firstItem="eCR-Da-F9U" firstAttribute="top" secondItem="Wd8-Fh-ZAc" secondAttribute="bottom" id="gyX-LG-P0y"/>
-                            <constraint firstItem="Wd8-Fh-ZAc" firstAttribute="leading" secondItem="7oj-KX-X3I" secondAttribute="leading" id="h3h-f1-qBK"/>
-                            <constraint firstItem="eCR-Da-F9U" firstAttribute="top" secondItem="4La-vr-1TB" secondAttribute="bottom" constant="20" id="lGs-K6-TwE"/>
-                            <constraint firstItem="mQp-vh-vrq" firstAttribute="top" secondItem="7mq-lA-c8P" secondAttribute="bottom" constant="20" id="rnJ-dP-hgC"/>
-                            <constraint firstItem="HWv-Kl-5EN" firstAttribute="leading" secondItem="7oj-KX-X3I" secondAttribute="leadingMargin" id="v8d-vT-cJu"/>
-                            <constraint firstItem="4La-vr-1TB" firstAttribute="top" secondItem="cwE-ez-yOi" secondAttribute="bottom" constant="8" id="z1q-YV-bK4"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="0UX-mV-Cuc"/>
-                    <connections>
-                        <outlet property="label" destination="cwE-ez-yOi" id="j9b-fK-Obp"/>
-                        <outlet property="mapView" destination="Wd8-Fh-ZAc" id="ZkH-o7-hWl"/>
-                        <outlet property="slider" destination="4La-vr-1TB" id="bYE-11-fLD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oz6-eO-ADD" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3354" y="-3256"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ybL-wt-8vC">
@@ -721,7 +654,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarLogoBlack" translatesAutoresizingMaskIntoConstraints="NO" id="4xP-CN-UDV">
-                                <rect key="frame" x="16" y="114" width="343" height="438"/>
+                                <rect key="frame" x="16" y="114.5" width="343" height="438"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -734,7 +667,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jj5-uf-Roc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5266" y="-937"/>
+            <point key="canvasLocation" x="-5505" y="-935"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="sq7-mp-khg">
@@ -1008,7 +941,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtK-fH-RDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4117" y="-936"/>
+            <point key="canvasLocation" x="-3842" y="-940"/>
         </scene>
         <!--Forgot Password Controller-->
         <scene sceneID="yup-EX-KGw">
@@ -1029,10 +962,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKh-RT-5yv" customClass="CustomView" customModule="MileageTracker" customModuleProvider="target">
-                                <rect key="frame" x="41" y="138" width="293" height="311.5"/>
+                                <rect key="frame" x="41" y="137.5" width="293" height="312"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adresa de e-mail..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Q7-Bb-xrK" customClass="TextInput" customModule="MileageTracker" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="182" width="261" height="40"/>
+                                        <rect key="frame" x="16" y="182.5" width="261" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="qwy-5n-W02"/>
                                         </constraints>
@@ -1041,7 +974,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a95-Lv-zWQ">
-                                        <rect key="frame" x="69" y="246" width="156" height="42"/>
+                                        <rect key="frame" x="69" y="246.5" width="156" height="42"/>
                                         <color key="backgroundColor" red="0.29803921570000003" green="0.20000000000000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ur0-n2-oTS"/>
@@ -1061,13 +994,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parolă uitată" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoC-GY-MRk">
-                                        <rect key="frame" x="16" y="75.5" width="95" height="20.5"/>
+                                        <rect key="frame" x="16" y="76" width="95" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.29803921570000003" green="0.20000000000000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduceți adresa și vă vom trimite un e-mail cu instrucțiuni pentru resetare." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEM-7c-UlE">
-                                        <rect key="frame" x="16" y="112" width="261" height="54"/>
+                                        <rect key="frame" x="16" y="112.5" width="261" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.60392156860000001" green="0.59999999999999998" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1088,7 +1021,7 @@
                                 </constraints>
                             </view>
                             <imageView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_forgot_password" translatesAutoresizingMaskIntoConstraints="NO" id="afz-Yi-KyO" customClass="RoundImageView" customModule="MileageTracker" customModuleProvider="target">
-                                <rect key="frame" x="158" y="138" width="59" height="59"/>
+                                <rect key="frame" x="158" y="137.5" width="59" height="59.5"/>
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.20000000000000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="afz-Yi-KyO" secondAttribute="height" multiplier="1:1" id="hdy-RK-Auc"/>
@@ -1125,7 +1058,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEN-Eq-Jh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4699" y="-937"/>
+            <point key="canvasLocation" x="-4700" y="-935"/>
         </scene>
         <!--Add Beacon View Controller-->
         <scene sceneID="gTU-Ca-iSt">
@@ -1147,6 +1080,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Adăugare beacon" id="kFb-IP-tJF">
+                                        <barButtonItem key="backBarButtonItem" title="Înapoi" id="4Ig-aF-s0d"/>
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrow_back_white" id="8sG-Fl-TQk">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
@@ -1208,7 +1142,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="addBeacon:" destination="cWx-fO-kVS" eventType="touchUpInside" id="6hs-eX-X9K"/>
+                                                    <action selector="addBeacon:" destination="cWx-fO-kVS" eventType="touchUpInside" id="1c3-Kn-YcR"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1261,12 +1195,12 @@
                         <outlet property="minor" destination="uUt-xB-ozV" id="pDZ-Ix-ETO"/>
                         <outlet property="scrollView" destination="gcJ-Ba-AM3" id="8OU-Bm-g7u"/>
                         <outlet property="uuid" destination="Fj3-9e-nKu" id="tZH-XM-p72"/>
-                        <outlet property="vehicle" destination="9Ho-nU-V82" id="erL-aP-L1n"/>
+                        <outlet property="vehicle" destination="9Ho-nU-V82" id="7gh-aP-csT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ban-1u-HXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2498" y="-935"/>
+            <point key="canvasLocation" x="-2111" y="-935"/>
         </scene>
         <!--Călătoriile mele-->
         <scene sceneID="Oqd-bY-xAP">
@@ -1432,7 +1366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTs-mo-8ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="-1539"/>
+            <point key="canvasLocation" x="460" y="-1540"/>
         </scene>
         <!--Trips List View Controller-->
         <scene sceneID="JbW-1p-9vd">
@@ -1673,6 +1607,9 @@
                             <constraint firstItem="q4P-Za-rI7" firstAttribute="leading" secondItem="wLu-yQ-Yuk" secondAttribute="leading" id="Z1r-FN-kYz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="T2B-Bm-n58">
+                        <barButtonItem key="backBarButtonItem" title="Înapoi" id="oUd-eT-K7C"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="countLabel" destination="sCU-H7-mLY" id="1fZ-iv-zlG"/>
                         <outlet property="dateLabel" destination="Uye-Ch-U4v" id="A5E-Y3-ds0"/>
@@ -1683,7 +1620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaT-4z-KtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479" y="-1539"/>
+            <point key="canvasLocation" x="1177" y="-1540"/>
         </scene>
         <!--Trip Details View Controller-->
         <scene sceneID="N7O-bn-Gvq">
@@ -1800,6 +1737,9 @@
                             <constraint firstItem="pIz-SS-jzM" firstAttribute="leading" secondItem="qgu-fS-6MD" secondAttribute="leading" id="lKk-HU-pj8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="M5i-Lj-DoS">
+                        <barButtonItem key="backBarButtonItem" title="Înapoi" id="gqO-du-lMO"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="distanceLabel" destination="YYi-nL-Ykl" id="bdv-Uz-5pN"/>
                         <outlet property="durationLabel" destination="qMm-Tt-IQ7" id="qJj-CF-ExT"/>
@@ -1809,7 +1749,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WkK-ku-YDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2300" y="-1540"/>
+            <point key="canvasLocation" x="1177" y="-854"/>
         </scene>
         <!--Edit Or Add Beacon View Controller-->
         <scene sceneID="oTV-eg-OKK">
@@ -1933,7 +1873,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tFS-PE-4gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pWr-Gw-yQe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="-706"/>
+            <point key="canvasLocation" x="460" y="-854"/>
         </scene>
         <!--Report Preview View Controller-->
         <scene sceneID="kNk-wc-5iK">
@@ -1993,7 +1933,7 @@
         <image name="previous" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="hb7-fF-Nzc"/>
         <segue reference="gmR-n7-vjo"/>
-        <segue reference="gcc-KH-ON4"/>
     </inferredMetricsTieBreakers>
 </document>

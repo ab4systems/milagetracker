@@ -1,9 +1,9 @@
 //
 //  CustomPrintPageRenderer.swift
-//  Print2PDF
+//  MileageTracker
 //
-//  Created by Gabriel Theodoropoulos on 24/06/16.
-//  Copyright © 2016 Appcoda. All rights reserved.
+//  Created by Vlad Alexandru on 04/04/2017.
+//  Copyright © 2017 Vlad Alexandru. All rights reserved.
 //
 
 import UIKit

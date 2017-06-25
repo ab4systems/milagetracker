@@ -14,76 +14,69 @@ import Parse
 
 class LocationManager: CLLocationManager, CLLocationManagerDelegate {
     
-    static var mainInstance: LocationManager!
-    var lastLocation: CLLocation?
-    var activeTrip : Trip!
-    var task : DispatchWorkItem!
+    static let mainInstance: LocationManager = {
+        let instance = LocationManager()
+        instance.requestAlwaysAuthorization()
+        instance.allowsBackgroundLocationUpdates = true
+        instance.desiredAccuracy = kCLLocationAccuracyBest
+        instance.delegate = instance
+        instance.activityType = .automotiveNavigation
+        instance.distanceFilter = 200
+        instance.headingFilter = 60
+        instance.headingOrientation = .unknown
+        instance.pausesLocationUpdatesAutomatically = false
+        return instance
+    }()
+    
+    private var lastLocation: CLLocation!
+    private var activeTrip : Trip!
+    private var task : DispatchWorkItem!
     
     //    let beaconRegion = CLBeaconRegion(proximityUUID: UUID(uuidString: "97690290-6bf6-418e-b220-0e421ce161b2")!, major: 1, minor: 0, identifier: "GimbalBeacon")
     //    let beaconRegion = CLBeaconRegion(proximityUUID: UUID(uuidString: "20CAE8A0-A9CF-11E3-A5E2-0800200C9A66")!, major: 105, minor: 2662, identifier: "OnyxBeacon")
     
-    static func startMonitoringBeacons(){
+    func startMonitoringBeacons(){
         if PFUser.current() != nil{
             Beacon.queryOffline()?.findObjectsInBackground(block: { (objects, error) in
                 if error == nil{
-                    self.setupAction()
                     for beacon in objects as! [Beacon]{
-                        let beaconRegion = CLBeaconRegion(proximityUUID: UUID(uuidString: beacon.uuid)!, major: CLBeaconMajorValue(beacon.major), minor: CLBeaconMinorValue(beacon.minor), identifier: beacon.vehicle)
-                        beaconRegion.notifyOnEntry = true
-                        beaconRegion.notifyOnExit = true
-                        self.mainInstance.startMonitoring(for: beaconRegion)
+                        self.startMonitoring(beacon: beacon)
                     }
                 }
             })
         }
     }
     
-    static func stopMonitoringBeacons(){
+    func stopMonitoringBeacons(){
         if PFUser.current() != nil{
             Beacon.queryOffline()?.findObjectsInBackground(block: { (objects, error) in
                 if error == nil{
-                    self.setupAction()
                     for beacon in objects as! [Beacon]{
-                        let beaconRegion = CLBeaconRegion(proximityUUID: UUID(uuidString: beacon.uuid)!, major: CLBeaconMajorValue(beacon.major), minor: CLBeaconMinorValue(beacon.minor), identifier: beacon.vehicle)
-                        beaconRegion.notifyOnEntry = false
-                        beaconRegion.notifyOnExit = false
-                        self.mainInstance.stopMonitoring(for: beaconRegion)
+                        self.stopMonitoring(beacon: beacon)
                     }
                 }
             })
         }
     }
     
-    
-    static func stopMonitoring(beacon: Beacon){
-            self.setupAction()
-            let beaconRegion = CLBeaconRegion(proximityUUID: UUID(uuidString: beacon.uuid)!, major: CLBeaconMajorValue(beacon.major), minor: CLBeaconMinorValue(beacon.minor), identifier: beacon.vehicle)
-            beaconRegion.notifyOnEntry = false
-            beaconRegion.notifyOnExit = false
-            self.mainInstance.stopMonitoring(for: beaconRegion)
-    }
-    
-    static func startMonitoring(beacon: Beacon){
-        self.setupAction()
+    func stopMonitoring(beacon: Beacon){
         let beaconRegion = CLBeaconRegion(proximityUUID: UUID(uuidString: beacon.uuid)!, major: CLBeaconMajorValue(beacon.major), minor: CLBeaconMinorValue(beacon.minor), identifier: beacon.vehicle)
+        beaconRegion.notifyOnEntry = false
+        beaconRegion.notifyOnExit = false
+        stopMonitoring(for: beaconRegion)
+    }
+    
+    func startMonitoring(beacon: Beacon){
+        let uuid = UUID(uuidString: beacon.uuid)!
+        let major = CLBeaconMajorValue(beacon.major)
+        let minor = CLBeaconMinorValue(beacon.minor)
+        let beaconRegion = CLBeaconRegion(proximityUUID: uuid,
+                                          major: major,
+                                          minor: minor,
+                                          identifier: beacon.vehicle)
         beaconRegion.notifyOnEntry = true
         beaconRegion.notifyOnExit = true
-        self.mainInstance.startMonitoring(for: beaconRegion)
-    }
-    
-    static func setupAction() {
-        if mainInstance == nil {
-            mainInstance = LocationManager()
-            mainInstance.allowsBackgroundLocationUpdates = true
-            mainInstance.desiredAccuracy = kCLLocationAccuracyBest
-            mainInstance.delegate = mainInstance
-            mainInstance.requestAlwaysAuthorization()
-            mainInstance.activityType = .automotiveNavigation
-            mainInstance.distanceFilter = 200
-            mainInstance.headingFilter = 60
-            mainInstance.headingOrientation = .unknown
-            mainInstance.pausesLocationUpdatesAutomatically = false
-        }
+        startMonitoring(for: beaconRegion)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -91,130 +84,123 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
             guard task == nil else{
                 return
             }
-            
             guard location.horizontalAccuracy < 120 && location.horizontalAccuracy >= 0 else {
                 return
             }
-            
             if activeTrip == nil{
                 do{
-                    self.activeTrip = try Trip.queryForCurrentTrip()?.getFirstObject() as? Trip
-                    do{
-                        let lastSavedLocation = try Location.queryLastLocationFor(trip: self.activeTrip)?.getFirstObject() as! Location
-                        self.lastLocation = CLLocation(latitude: lastSavedLocation.latitude, longitude: lastSavedLocation.longitude)
-                    }catch{
-                        
-                    }
+                   try restoreActiveTripFromDatabase()
                 }catch{
                     return
                 }
             }
-            
-            guard location.timestamp > activeTrip.startTime else{
-//                Utils.showNotification(body:"old timestamp \(location.timestamp.toString())")
-                return
-            }
-            
-//            if location.timestamp >= activeTrip.startTime{
-//                
-//            }else{
-//                                Utils.showNotification(body:"old timestamp \(location.timestamp.toString())")
-//
+//            guard location.timestamp > activeTrip.startTime else{
+//                return
 //            }
             
             if lastLocation == nil {
                 save(location: location)
-            }else if location.distance(from: lastLocation!) > 50 {
+            }else if location.distance(from: lastLocation!) > 30 {
                 save(location: location)
             }
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        manager.stopUpdatingLocation()
-        manager.startUpdatingLocation()
+        stopUpdatingLocation()
+        requestLocation()
+        startUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         if region is CLBeaconRegion {
-            if task != nil{
-                task.cancel()
-                task = nil
-            }
-            Utils.showNotification(body: "Did Enter Beacon Region")
+            Utils.showNotification(body: "Did enter beacon region")
             if activeTrip == nil{
                 do{
-                    self.activeTrip = try Trip.queryForCurrentTrip()?.getFirstObject() as? Trip
-                    do{
-                        let lastSavedLocation = try Location.queryLastLocationFor(trip: self.activeTrip)?.getFirstObject() as! Location
-                        self.lastLocation = CLLocation(latitude: lastSavedLocation.latitude, longitude: lastSavedLocation.longitude)
-                    }catch{
-                        
-                    }
-                    self.startLocationUpdates(manager: manager)
+                    try restoreActiveTripFromDatabase()
                 }catch{
-                    do{
-                        let beacon =  try Beacon.queryByVehicle(vehicle: region.identifier)?.getFirstObject()
-                        self.activeTrip = Trip(beacon: beacon as! Beacon)
-                        self.activeTrip.pinInBackground()
-                        self.activeTrip.saveEventually()
-                        self.startLocationUpdates(manager: manager)
-                    }catch{
-                        
-                    }
+                    startNewTrip(vehicle: region.identifier)
+                    return
                 }
-            }else if activeTrip.beacon.vehicle == region.identifier{
-                self.startLocationUpdates(manager: manager)
+            }
+            if activeTrip.beacon.vehicle == region.identifier{
+                resumeCurrentTrip()
+                Utils.showNotification(body: "Calatorie contiuata")
             }else{
-                do{
-                    self.activeTrip.current = false
-                    self.activeTrip.pinInBackground()
-                    self.activeTrip.saveEventually()
-                    
-                    let beacon =  try Beacon.queryByVehicle(vehicle: region.identifier)?.getFirstObject()
-                    self.activeTrip = Trip(beacon: beacon as! Beacon)
-                    self.activeTrip.pinInBackground()
-                    self.activeTrip.saveEventually()
-                    self.startLocationUpdates(manager: manager)
-                }catch{
-                    
-                }
+                endCurrentTrip()
+                startNewTrip(vehicle: region.identifier)
+                Utils.showNotification(body: "Calatorie noua")
             }
         }
     }
     
+    func restoreActiveTripFromDatabase() throws {
+        self.activeTrip = try Trip.queryForCurrentTrip()?.getFirstObject() as? Trip
+        do{
+            let lastSavedLocation = try Location.queryLastLocationFor(trip: self.activeTrip)?.getFirstObject() as! Location
+            self.lastLocation = CLLocation(latitude: lastSavedLocation.latitude, longitude: lastSavedLocation.longitude)
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
+    
+    func startNewTrip(vehicle : String) {
+        do{
+            let beacon =  try Beacon.queryByVehicle(vehicle: vehicle)?.getFirstObject()
+            self.activeTrip = Trip(beacon: beacon as! Beacon)
+            self.activeTrip.pinInBackground()
+            self.activeTrip.saveEventually()
+            self.startLocationUpdates()
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
+    
+    func resumeCurrentTrip(){
+        if task != nil{
+            task.cancel()
+            task = nil
+        }
+        self.startLocationUpdates()
+    }
+    
+    func endCurrentTrip(){
+        let tripInfo = self.getTripDetails()
+        if tripInfo.0 > 80{
+            self.activeTrip.unpinInBackground()
+            self.activeTrip.deleteEventually()
+            Utils.showNotification(body: "Calatoria a fost stearsa")
+        }else{
+            self.activeTrip.current = false
+            self.activeTrip.distance = tripInfo.1
+            self.activeTrip.averageSpeed = tripInfo.2
+//            self.activeTrip.startTime = tripInfo.3!
+            self.activeTrip.endTime = tripInfo.4!
+            self.activeTrip.pinInBackground()
+            self.activeTrip.saveEventually()
+            Utils.showNotification(body: "A fost adăugată o călătorie nouă!")
+        }
+        self.activeTrip = nil
+        self.lastLocation = nil
+        self.task = nil
+        self.stopLocationUpdates()
+    }
+    
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         if region is CLBeaconRegion {
-            Utils.showNotification(body: "Did Exit Beacon Region")
-            
+            Utils.showNotification(body: "Did exit beacon region")
             self.task = DispatchWorkItem {
                 if self.activeTrip == nil{
                     do{
-                        self.activeTrip = try Trip.queryForCurrentTrip()?.getFirstObject() as? Trip
+                        try self.restoreActiveTripFromDatabase()
                     }catch{
                         return
                     }
                 }
-                let tripInfo = self.getTripDetails()
-                if tripInfo.0 > 80{
-                    self.activeTrip.unpinInBackground()
-                    self.activeTrip.deleteEventually()
-                }else{
-                    self.activeTrip.current = false
-                    self.activeTrip.distance = tripInfo.1
-                    self.activeTrip.averageSpeed = tripInfo.2
-                    self.activeTrip.startTime = tripInfo.3!
-                    self.activeTrip.endTime = tripInfo.4!
-                    self.activeTrip.pinInBackground()
-                    self.activeTrip.saveEventually()
-                }
-                self.activeTrip = nil
-                self.lastLocation = nil
-                self.task = nil
-                Utils.showNotification(body: "New trip added")
-                self.stopLocationUpdates(manager: manager)
+                self.endCurrentTrip()
             }
-            DispatchQueue.global(qos: .default).asyncAfter(deadline: DispatchTime.now() + 300, execute: task)
+            let queue = DispatchQueue.global(qos: .default)
+            queue.asyncAfter(deadline: DispatchTime.now() + 300, execute: task)
         }
     }
     
@@ -222,22 +208,19 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
         print("error:: \(error.localizedDescription)")
     }
     
-    func startLocationUpdates(manager: CLLocationManager){
-        manager.startMonitoringSignificantLocationChanges()
-        manager.startUpdatingLocation()
-        manager.startUpdatingHeading()
+    func startLocationUpdates(){
+        startMonitoringSignificantLocationChanges()
+        startUpdatingLocation()
+        startUpdatingHeading()
     }
     
-    func stopLocationUpdates(manager: CLLocationManager){
-        manager.stopMonitoringSignificantLocationChanges()
-        manager.stopUpdatingHeading()
-        manager.stopUpdatingLocation()
+    func stopLocationUpdates(){
+        stopMonitoringSignificantLocationChanges()
+        stopUpdatingHeading()
+        stopUpdatingLocation()
     }
     
     func save(location: CLLocation){
-//        if lastLocation != nil{
-//            Utils.showNotification(body: "accuracy: \(location.horizontalAccuracy) \n distance: \(location.distance(from: self.lastLocation!))")
-//        }
         let pLocation = Location(latitude: location.coordinate.latitude,
                                  longitude: location.coordinate.longitude,
                                  speed: location.speed < 0 ? 0 : location.speed * 3.6,
@@ -266,6 +249,12 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
                 }
                 speed = speed/Double(locations!.count-1)
                 let percentage = Double((nrInRegion*100)/locations!.count)
+                if percentage > 80{
+                    for location in locations!{
+                        location.unpinInBackground()
+                        location.deleteEventually()
+                    }
+                }
                 return (percentage,distance,speed,firstLocation.date,(locations!.last?.date)!)
             }
         }catch{

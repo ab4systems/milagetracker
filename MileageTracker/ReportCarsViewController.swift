@@ -56,13 +56,12 @@ class ReportCarsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "carReportsCell", for: indexPath) as! CarTableViewCell
         cell.prepareCell(car: cars[indexPath.row])
-        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! CarTableViewCell
-        selectedDates = cell.dates
+        selectedDates = cell.dates.sorted{$0 > $1}
         selectedPosition = indexPath.row
         performSegue(withIdentifier: "goToMonths", sender: self)
     }

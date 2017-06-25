@@ -10,6 +10,7 @@ import Foundation
 import Parse
 
 class Location: PFObject{
+    
     @NSManaged var latitude: Double
     @NSManaged var longitude: Double
     @NSManaged var speed: Double
@@ -37,6 +38,7 @@ class Location: PFObject{
     class func queryOnlineFor(trip:Trip) -> PFQuery<Location>? {
         let query = PFQuery(className: Location.parseClassName())
         query.whereKey("trip", equalTo: trip)
+        query.limit = 1000
         return query as? PFQuery<Location>
     }
     

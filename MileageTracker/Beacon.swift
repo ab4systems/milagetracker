@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Beacon.swift
 //  MileageTracker
 //
 //  Created by Vlad Alexandru on 07/04/2017.

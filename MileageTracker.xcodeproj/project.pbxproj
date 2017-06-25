@@ -33,7 +33,6 @@
 		FACC3AF01EC5F14E00C407B0 /* ReportPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC3AEF1EC5F14E00C407B0 /* ReportPreviewViewController.swift */; };
 		FAD28F9C1E716EDE0010E86D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD28F9B1E716EDE0010E86D /* LocationManager.swift */; };
 		FAE331031DF00B7D00B96809 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE331021DF00B7D00B96809 /* AppDelegate.swift */; };
-		FAE331051DF00B7D00B96809 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE331041DF00B7D00B96809 /* LocationViewController.swift */; };
 		FAE331081DF00B7D00B96809 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE331061DF00B7D00B96809 /* Main.storyboard */; };
 		FAE3310A1DF00B7D00B96809 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE331091DF00B7D00B96809 /* Assets.xcassets */; };
 		FAE3310D1DF00B7D00B96809 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE3310B1DF00B7D00B96809 /* LaunchScreen.storyboard */; };
@@ -80,7 +79,6 @@
 		FAD28F9B1E716EDE0010E86D /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FAE330FF1DF00B7D00B96809 /* MileageTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MileageTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE331021DF00B7D00B96809 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAE331041DF00B7D00B96809 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		FAE331071DF00B7D00B96809 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAE331091DF00B7D00B96809 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAE3310C1DF00B7D00B96809 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -123,14 +121,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		FA4CB9C01E93C73D00287AB5 /* ViewControllers */ = {
+		FA4CB9C01E93C73D00287AB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				FAC653AF1E9E25EB0038E2B4 /* ParentViewControllers */,
 				FA0E02721E9BD79000526012 /* ProfileViewController.swift */,
 				FA0E026C1E97D35A00526012 /* CalendarViewController.swift */,
 				FAE95A961EAF66F90016FECE /* EditOrAddBeaconViewController.swift */,
-				FAE331041DF00B7D00B96809 /* LocationViewController.swift */,
 				FA5CBB1D1E93BD4B00A952B8 /* ForgotPassswordController.swift */,
 				FAC962371E9132F90059DE1E /* SignUpViewController.swift */,
 				FA5CBB171E93935300A952B8 /* LoginViewController.swift */,
@@ -142,7 +139,7 @@
 				FAF266961EC5A4C5005D3D64 /* MonthsViewController.swift */,
 				FACC3AEF1EC5F14E00C407B0 /* ReportPreviewViewController.swift */,
 			);
-			name = ViewControllers;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		FA5CC5981DFFEAE90058F640 /* Frameworks */ = {
@@ -176,7 +173,7 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		FAC653A51E9E22FB0038E2B4 /* CustomViews */ = {
+		FAC653A51E9E22FB0038E2B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				FA5CBB1B1E93AE2700A952B8 /* CustomView.swift */,
@@ -186,12 +183,13 @@
 				FA190A7D1EA7683B009B32A8 /* TripTableViewCell.swift */,
 				FAF266941EC4B735005D3D64 /* CarTableViewCell.swift */,
 			);
-			name = CustomViews;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		FAC653A61E9E23340038E2B4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FAD28F9B1E716EDE0010E86D /* LocationManager.swift */,
 				FA5CBB151E93921F00A952B8 /* Extensions.swift */,
 				FAE6338A1E80325500C3D424 /* Utils.swift */,
 				FAE38F521EC5F3B4003E531A /* ReportComposer.swift */,
@@ -230,18 +228,17 @@
 		FAE331011DF00B7D00B96809 /* MileageTracker */ = {
 			isa = PBXGroup;
 			children = (
-				FA9252C71ED59F64009FDAD9 /* HTMLFiles */,
-				FAC653A61E9E23340038E2B4 /* Utils */,
-				FAC653A51E9E22FB0038E2B4 /* CustomViews */,
 				FAC653A41E9E22E90038E2B4 /* Models */,
+				FAC653A51E9E22FB0038E2B4 /* Views */,
+				FA4CB9C01E93C73D00287AB5 /* Controllers */,
+				FAC653A61E9E23340038E2B4 /* Utils */,
 				FAFE09431E705B6000C285FF /* MileageTracker.entitlements */,
 				FAE3310E1DF00B7D00B96809 /* Info.plist */,
 				FAE331021DF00B7D00B96809 /* AppDelegate.swift */,
-				FAD28F9B1E716EDE0010E86D /* LocationManager.swift */,
 				FAE331091DF00B7D00B96809 /* Assets.xcassets */,
+				FA9252C71ED59F64009FDAD9 /* HTMLFiles */,
 				FAE3310B1DF00B7D00B96809 /* LaunchScreen.storyboard */,
 				FAE331061DF00B7D00B96809 /* Main.storyboard */,
-				FA4CB9C01E93C73D00287AB5 /* ViewControllers */,
 			);
 			path = MileageTracker;
 			sourceTree = "<group>";
@@ -399,7 +396,6 @@
 			files = (
 				FA5CBB181E93935300A952B8 /* LoginViewController.swift in Sources */,
 				FA81732F1EAE131D00894338 /* Pin.swift in Sources */,
-				FAE331051DF00B7D00B96809 /* LocationViewController.swift in Sources */,
 				FA0E02731E9BD79000526012 /* ProfileViewController.swift in Sources */,
 				FA8173311EAE19FC00894338 /* TripDetailsViewController.swift in Sources */,
 				FA0E026F1E97E57400526012 /* CustomIconColorButton.swift in Sources */,

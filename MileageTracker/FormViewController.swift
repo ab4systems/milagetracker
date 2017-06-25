@@ -75,7 +75,4 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
     }
-    
-    
-
 }

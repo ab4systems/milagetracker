@@ -46,6 +46,9 @@ class TripDetailsViewController: UIViewController, MKMapViewDelegate {
                         
                         if (routeResponse?[0].distance)! < Double(400){
                             self.mapView.add((routeResponse?[0].polyline)!)
+                        }else{
+                            let line = MKGeodesicPolyline(coordinates: [c1,c2], count: 2)
+                            self.mapView.add(line)
                         }
                     } else if let error = error {
                         print(error.localizedDescription)

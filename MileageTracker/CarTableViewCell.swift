@@ -21,12 +21,6 @@ class CarTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func prepareCell(car: Beacon){
         nameLabel.text = car.vehicle
         Trip.queryFor(car: car)?.findObjectsInBackground(block: { (trips, error) in

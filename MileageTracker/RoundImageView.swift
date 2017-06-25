@@ -1,9 +1,9 @@
 //
 //  RoundImageView.swift
-//  leroy
+//  MileageTracker
 //
-//  Created by Vlad Alexandru on 18/08/16.
-//  Copyright © 2016 Cypien. All rights reserved.
+//  Created by Vlad Alexandru on 04/04/2017.
+//  Copyright © 2017 Vlad Alexandru. All rights reserved.
 //
 
 import UIKit

@@ -9,12 +9,13 @@
 import UIKit
 import Charts
 
-class ChartViewController: UIViewController {
+class ChartViewController: UIViewController,ChartViewDelegate {
     
     var month : Date!
     var days : [Int]!
     var distances : [Double]!
     var trips : [Trip]!
+    var selectedDay = 0
     
     @IBOutlet weak var barChartView: BarChartView!
     
@@ -22,6 +23,7 @@ class ChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = month.toMonthYearString()
+        barChartView.delegate = self
         let range = Calendar.current.range(of: .day, in: .month, for: month)!
         days = [Int](range.lowerBound..<range.upperBound)
         distances = [Double](repeating: 0.0, count: days.count)
@@ -61,14 +63,27 @@ class ChartViewController: UIViewController {
         
     }
     
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        let gregorian = Calendar(identifier: .gregorian)
+        var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: month)
+        components.day = Int(entry.x)
+        month = gregorian.date(from: components)!
+        self.performSegue(withIdentifier: "tripsFromChart", sender: self)
+    }
+    
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as! ReportPreviewViewController).trips = trips.sorted(by: { (trip1, trip2) -> Bool in
-            return trip1.startTime < trip2.startTime
-        })
+        if segue.identifier == "tripsFromChart"{
+            (segue.destination as! TripsListViewController).date = month
+        }else{
+            (segue.destination as! ReportPreviewViewController).trips = trips.sorted(by: { (trip1, trip2) -> Bool in
+                return trip1.startTime < trip2.startTime
+            })
+
+        }
     }
 
 }

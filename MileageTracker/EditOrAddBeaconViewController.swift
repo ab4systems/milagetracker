@@ -63,8 +63,8 @@ class EditOrAddBeaconViewController: FormViewController {
                     editedBeacon.pinInBackground(block: { (success, error) in
                         self.stopActivity()
                         if success {
-                            LocationManager.stopMonitoring(beacon: self.beacon!)
-                            LocationManager.startMonitoring(beacon: editedBeacon)
+                            LocationManager.mainInstance.stopMonitoring(beacon: self.beacon!)
+                            LocationManager.mainInstance.startMonitoring(beacon: editedBeacon)
                             editedBeacon.saveEventually()
                             self.performSegue(withIdentifier: "unwindToProfile", sender: self)
                         }else{
@@ -76,7 +76,7 @@ class EditOrAddBeaconViewController: FormViewController {
                     beacon.pinInBackground(block: { (success, error) in
                         self.stopActivity()
                         if success {
-                            LocationManager.startMonitoring(beacon: beacon)
+                            LocationManager.mainInstance.startMonitoring(beacon: beacon)
                             beacon.saveEventually()
                             self.performSegue(withIdentifier: "unwindToProfile", sender: self)
                         }else{

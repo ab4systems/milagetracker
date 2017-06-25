@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:mapstogpx20170427_144159.gpx">
+      location = "group:route.gpx">
    </FileRef>
    <FileRef
       location = "group:MileageTracker.xcodeproj">

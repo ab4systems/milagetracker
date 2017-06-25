@@ -52,7 +52,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource,UITableView
     }
 
     @IBAction func logOut(_ sender: Any) {
-        LocationManager.stopMonitoringBeacons()
+        LocationManager.mainInstance.stopMonitoringBeacons()
         PFUser.logOut()
          (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = storyboard?.instantiateViewController(withIdentifier: "LoginController")
     }
@@ -85,7 +85,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource,UITableView
         
         if beacons.count > 1{
             let delete = UITableViewRowAction(style: .normal, title: "Șterge") { action, index in
-                LocationManager.stopMonitoring(beacon: self.beacons[index.row])
+                LocationManager.mainInstance.stopMonitoring(beacon: self.beacons[index.row])
                 self.beacons[index.row].unpinInBackground()
                 self.beacons[index.row].deleteEventually()
                 self.beacons.remove(at: index.row)

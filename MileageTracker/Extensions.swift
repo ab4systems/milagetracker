@@ -1,9 +1,9 @@
 //
 //  StringExtensions.swift
-//  Leroy
+//  MileageTracker
 //
-//  Created by Gabriel Rotaru on 22/12/15.
-//  Copyright © 2015 Cypien. All rights reserved.
+//  Created by Vlad Alexandru on 04/04/2017.
+//  Copyright © 2017 Vlad Alexandru. All rights reserved.
 //
 
 import Foundation
@@ -100,7 +100,6 @@ extension Date {
         dateFormatter.dateFormat = "dd MMMM yyyy HH:mm:ss"
         return dateFormatter.string(from: self)
     }
-    
 }
 
 extension TimeInterval{

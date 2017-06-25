@@ -1,9 +1,9 @@
 //
 //  ForgotPassswordController.swift
-//  Leroy
+//  MileageTracker
 //
-//  Created by Vlad Alexandru on 08/12/15.
-//  Copyright © 2015 Cypien. All rights reserved.
+//  Created by Vlad Alexandru on 04/04/2017.
+//  Copyright © 2017 Vlad Alexandru. All rights reserved.
 //
 
 import UIKit

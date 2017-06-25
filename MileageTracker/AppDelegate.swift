@@ -32,10 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             application.registerForRemoteNotifications()
         }
         
-        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
-
-        
-        PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
         configureRootViewController()
         
         Fabric.with([Crashlytics.self])
@@ -48,7 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         configureParse()
-        LocationManager.startMonitoringBeacons()
+        PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
+        LocationManager.mainInstance.startMonitoringBeacons()
         return true
     }
     
@@ -117,7 +114,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             $0.server = "https://fierce-anchorage-90815.herokuapp.com/parse"
             $0.isLocalDatastoreEnabled = true
         }
-        
         Parse.initialize(with: configuration)
         Beacon.registerSubclass()
         Location.registerSubclass()

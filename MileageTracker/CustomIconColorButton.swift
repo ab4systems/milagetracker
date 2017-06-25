@@ -1,9 +1,9 @@
 //
 //  CustomIconColorButton.swift
-//  whatsinit
+//  MileageTracker
 //
-//  Created by Vlad Alexandru on 16/01/2017.
-//  Copyright © 2017 Cypien. All rights reserved.
+//  Created by Vlad Alexandru on 04/04/2017.
+//  Copyright © 2017 Vlad Alexandru. All rights reserved.
 //
 
 import UIKit

@@ -49,6 +49,8 @@ class ReportComposer: NSObject {
                 itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ORA_SOSIRE#", with: item.endTime.toHourString())
                 itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#DISTANTA#", with: "\((item.distance/1000).roundTo(places: 2))")
 
+                
+                // Add the item's HTML code to the general items string.
                 allItems += itemHTMLContent
                 total += item.distance
             }

@@ -36,6 +36,7 @@ class Trip : PFObject{
     override class func query() -> PFQuery<PFObject>? {
         let query = PFQuery(className: Trip.parseClassName())
         query.whereKey("user", equalTo: PFUser.current()!)
+        query.limit = 1000
         return query
     }
     
@@ -54,6 +55,7 @@ class Trip : PFObject{
         query.addDescendingOrder("startTime")
         query.whereKey("current", equalTo: false)
         query.whereKey("user", equalTo: PFUser.current()!)
+        query.limit = 1000
         return query
     }
     
@@ -65,6 +67,7 @@ class Trip : PFObject{
         query.whereKey("startTime", lessThan: date.endOfMonth())
         query.whereKey("user", equalTo: PFUser.current()!)
         query.addDescendingOrder("startTime")
+        query.limit = 1000
         return query as? PFQuery<Trip>
     }
     
