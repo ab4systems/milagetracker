@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in LoginViewController.fbLoginAction(_:):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "error as! NSError">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ProfileViewController.showUserInfo() -&gt; ():ProfileViewController.swift">
       </ContextState>
       <ContextState
@@ -83,12 +91,7 @@
          contextName = "LoginViewController.(goToApp() -&gt; ()).(closure #1).(closure #1).(closure #1):LoginViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "EditOrAddBeaconViewController.viewDidLoad() -&gt; ():EditOrAddBeaconViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "saveButton.currentTitle">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "LocationViewController.(showLocations(Any) -&gt; ()).(closure #1).(closure #1):LocationViewController.swift">
       </ContextState>
       <ContextState
          contextName = "SavedScansController.presentedDateUpdated(CVDate) -&gt; ():CalendarViewController.swift">
@@ -108,7 +111,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LocationViewController.(showLocations(Any) -&gt; ()).(closure #1).(closure #1):LocationViewController.swift">
+         contextName = "EditOrAddBeaconViewController.viewDidLoad() -&gt; ():EditOrAddBeaconViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "saveButton.currentTitle">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LocationViewController.(viewDidLoad() -&gt; ()).(closure #1):LocationViewController.swift">
       </ContextState>
       <ContextState
          contextName = "AppDelegate.userNotificationCenter(UNUserNotificationCenter, willPresent : UNNotification, withCompletionHandler : (UNNotificationPresentationOptions) -&gt; ()) -&gt; ():AppDelegate.swift">
@@ -117,9 +128,6 @@
                value = "notification.request.content.userInfo">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LocationViewController.(viewDidLoad() -&gt; ()).(closure #1):LocationViewController.swift">
       </ContextState>
       <ContextState
          contextName = "LoginViewController.(fbLoginAction(Any) -&gt; ()).(closure #1).(closure #1):LoginViewController.swift">
@@ -249,10 +257,10 @@
          contextName = "SavedScansController.(reloadTrips(date : Date) -&gt; ()).(closure #1):CalendarViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "trip.startTime">
+               value = "cvDate.weekDay()!.rawValue">
             </PersistentString>
             <PersistentString
-               value = "cvDate.weekDay()!.rawValue">
+               value = "trip.startTime">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
